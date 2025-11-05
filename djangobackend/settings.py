@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-n0c&cb^79(oaw!%g&rbpurus1y@j8iie7l2hw%#m3pq^lsxtw0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://backend-b3nu.onrender.com", 'backend-b3nu.onrender.com']
-
+ALLOWED_HOSTS = [
+    "backend-b3nu.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -37,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'registration',
+    'registration',
     'rest_framework',
     'corsheaders',
 ]
@@ -60,7 +63,7 @@ ROOT_URLCONF = 'djangobackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], # For 404 you may want to add a path to custom templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,12 +125,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#!
 CSRF_TRUSTED_ORIGINS = [
     "https://backend-b3nu.onrender.com",
+    "http://backend-b3nu.onrender.com",
 ]
