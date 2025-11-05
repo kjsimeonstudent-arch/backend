@@ -42,3 +42,6 @@ def list_users(request):
     users = Registration.objects.all()
     serializer = RegistrationSerializer(users, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+            "api_registration": "/api/api/registration",
+            "admin": "/admin/",
