@@ -129,5 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #!
 CSRF_TRUSTED_ORIGINS = [
-    "https://peitelbackend.onrender.com",
+    "https://backend-b3nu.onrender.com",
 ]
